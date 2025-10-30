@@ -38,6 +38,7 @@ stringData:
   DB_PASSWORD: ${PW}
 EOF
 
+mkdir secrets
 sops --encrypt -i secrets/secret.yaml
 
-git add secrets/secret.yaml .sops.yaml; git commit -m "encrypted secret"; git push
+git add secrets/secret.yaml; git add .sops.yaml; git commit -m "encrypted secret"; git push
