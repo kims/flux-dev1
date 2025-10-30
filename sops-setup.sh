@@ -1,11 +1,19 @@
 #!/bin/bash
 
+# Create app structure
+
+kubectl create -f GitRepository.flux-dev1.yaml
+kubectl create -f HelmRelease.app1.yaml
+kubectl create -f Kustomization.app1.yaml
+
+## Generate and seal secret
+
 rm /tmp/age.*
 age-keygen -o /tmp/age.key &> /tmp/age.pub
 
-kubectl delete secret -n flux-system sops-age
+kubectl delete secret -n flux-dev1 sops-age
 kubectl create secret generic sops-age \
-  --namespace=flux-system \
+  --namespace=flux-dev1 \
   --from-file=age.agekey=/tmp/age.key \
   --type=Opaque
 
@@ -24,7 +32,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: my-secret
-  namespace: dev1
+  namespace: flux-dev1
 type: Opaque
 stringData:
   DB_PASSWORD: ${PW}

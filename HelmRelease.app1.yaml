@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: app1
+  namespace: flux-dev1
+spec:
+  interval: 1m
+  releaseName: app1
+  targetNamespace: dev1
+  chart:
+    spec:
+      chart: ./app1
+      sourceRef:
+        kind: GitRepository
+        name: flux-dev1
+        namespace: flux-dev1
+      version: '*'
+  install:
+    createNamespace: true
+  upgrade:
+    remediation:
+      retries: 3
