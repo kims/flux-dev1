@@ -11,7 +11,7 @@ kubectl create -f Kustomization.app1.yaml
 rm /tmp/age.*
 age-keygen -o /tmp/age.key &> /tmp/age.pub
 
-kubectl delete secret -n flux-dev1 sops-age
+kubectl delete secret -n flux-dev1 sops-age 2>/dev/null
 kubectl create secret generic sops-age \
   --namespace=flux-dev1 \
   --from-file=age.agekey=/tmp/age.key \
