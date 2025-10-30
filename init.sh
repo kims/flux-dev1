@@ -39,3 +39,5 @@ stringData:
 EOF
 
 sops --encrypt -i secrets/secret.yaml
+
+git add secrets/secret.yaml; git commit -m "encrypted secret"; git push

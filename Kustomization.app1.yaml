@@ -6,6 +6,7 @@ metadata:
 spec:
   interval: 1m
   path: .
+  prune: true
   sourceRef:
     kind: GitRepository
     name: flux-dev1
