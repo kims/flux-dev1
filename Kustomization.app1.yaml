@@ -9,7 +9,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-dev1
-  targetNamespace: dev1
+  targetNamespace: flux-dev1
   prune: true
   decryption:
     provider: sops
