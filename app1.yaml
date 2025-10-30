@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: app1
-  namespace: flux-system
+  namespace: flux-dev1
 spec:
   interval: 1m
   releaseName: app1
@@ -13,7 +13,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: flux-dev1
-        namespace: flux-system
+        namespace: flux-dev1
       version: '*'
   install:
     createNamespace: true

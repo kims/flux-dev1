@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: flux-dev1
-  namespace: flux-system
+  namespace: flux-dev1
 spec:
   interval: 1m
   url: https://github.com/kims/flux-dev1
