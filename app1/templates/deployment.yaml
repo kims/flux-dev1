@@ -5,7 +5,7 @@ metadata:
   name: self-service-password
   namespace: {{ .Values.namespace }}
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: ssp
