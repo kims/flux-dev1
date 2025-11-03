@@ -10,5 +10,5 @@ image:
 resources:
   limits:
     memory: "64Mi"
-    cpu: "100m"
+    cpu: "101m"
 
